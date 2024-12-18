@@ -28,7 +28,12 @@ fun HomeScreen(homeViewModel: HomeViewModel) {
     val stateFlowText by homeViewModel.stateFlowText.collectAsState()
     val sharedFlowText by homeViewModel.sharedFlowText.collectAsState("Hello World")
 
-    Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(12.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         Text(
             text = liveDataText ?: "",
             fontSize = 24.sp
